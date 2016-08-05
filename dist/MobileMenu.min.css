@@ -1,0 +1,6 @@
+/**
+ * mobilemenu - Display a Mobile Menu in a full overlay.
+ * @version v1.0.0
+ * @link https://github.com/ergopix-sarl/JS-Search-Bar
+ */
+.mobilemenu{text-transform:uppercase;background-color:#000;color:#fff;text-align:center;top:0;left:0;bottom:0;right:0;position:fixed;z-index:9999;font-size:30px;display:none}.mobilemenu__close{color:#fff;font-size:40px;position:absolute;top:18px;right:15px;width:30px;height:30px}.mobilemenu__close:after,.mobilemenu__close:before{content:'';position:absolute;width:27px;height:3px;background-color:#fff;border-radius:2px;top:15px}.mobilemenu__close:before{-webkit-transform:rotate(45deg);transform:rotate(45deg);left:2px}.mobilemenu__close:after{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);right:2px}
