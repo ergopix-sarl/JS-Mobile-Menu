@@ -1,7 +1,9 @@
+$mobilemenu-color: #fff;
+$mobilemenu-bg: #000;
+
 .mobilemenu {
     text-transform: uppercase;
-    background-color: #000;
-    color: #fff;
+    background-color: $mobilemenu-bg;
     text-align: center;
     top: 0;
     left: 0;
@@ -10,35 +12,76 @@
     position: fixed;
     z-index: 9999;
     font-size: 30px;
+
     display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &--visible {
+        display: flex;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+        animation-name: fadeInUp;
+        animation-duration: .6s;
+        animation-fill-mode: both;
+    }
+
+    li {
+        display:block;
+
+        + li {
+            margin-top:10px;
+        }
+    }
+
+    a {
+        color: $mobilemenu-color;
+    }
 }
 
+/**
+ * Close cross
+ */
 .mobilemenu__close {
-    color: #fff;
-    font-size: 40px;
+    color: $mobilemenu-color;
     position: absolute;
     top: 18px;
     right: 15px;
     width: 30px;
     height: 30px;
+
+    &:before,
+    &:after{
+        content: '';
+        position: absolute;
+        width: 26px;
+        height: 3px;
+        background-color: $mobilemenu-color;
+        border-radius: 2px;
+        top: 15px;
+    }
+    &:before{
+        transform: rotate(45deg);
+        left: 2px;
+    }
+    &:after{
+        transform: rotate(-45deg);
+        right: 2px;
+    }
 }
 
-.mobilemenu__close:before,
-.mobilemenu__close:after{
-    content: '';
-    position: absolute;
-    width: 27px;
-    height: 3px;
-    background-color: #fff;
-    border-radius: 2px;
-    top: 15px;
-}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 30%, 0);
+    }
 
-.mobilemenu__close:before{
-    transform: rotate(45deg);
-    left: 2px;
-}
-.mobilemenu__close:after{
-    transform: rotate(-45deg);
-    right: 2px;
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
