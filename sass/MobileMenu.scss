@@ -25,6 +25,7 @@ $mobilemenu-bg: #000;
     ul {
         padding: 0;
         margin: 0;
+
         animation-name: fadeInUp;
         animation-duration: .6s;
         animation-fill-mode: both;
@@ -32,6 +33,7 @@ $mobilemenu-bg: #000;
 
     li {
         display:block;
+        list-style: none;
 
         + li {
             margin-top:10px;
