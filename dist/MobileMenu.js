@@ -18,7 +18,9 @@
      */
     var MobileMenu = function (el) {
         $MobileMenuElement.addClass('mobilemenu');
+        $MobileMenuElement.prepend('<a href="javascript:void(0)" class="mobilemenu__close" data-toggle="MobileMenu"></a>');
     }
+    MobileMenu();
 
     /**
      * Show or hide the mobile menu
@@ -37,7 +39,7 @@
      * Show the mobile menu
      */
     MobileMenu.prototype.show = function (e) {
-        $MobileMenuElement.addClass('MobileMenu--visible');
+        $MobileMenuElement.addClass('mobilemenu--visible');
         isOpen = true;
     }
 
@@ -45,8 +47,7 @@
      * Hide the mobile menu
      */
     MobileMenu.prototype.hide = function (e) {
-        $MobileMenuElement.removeClass('MobileMenu--visible');
-        $MobileMenuInput.val(''); //Empty the value
+        $MobileMenuElement.removeClass('mobilemenu--visible');
         isOpen = false;
     }
 
